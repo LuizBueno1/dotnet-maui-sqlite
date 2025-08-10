@@ -36,7 +36,7 @@ namespace MyPurchases.Helpers
         }
 
         public Task<List<Product>> Search(String query) {
-            string sql = "SELECT * Product WHERE Description LIKE '%" + query + "%'";
+            string sql = "SELECT * FROM Product WHERE Description LIKE '%" + query + "%'";
 
             return _connection.QueryAsync<Product>(sql);
         }
