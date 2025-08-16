@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPurchases.Views.NewProduct"
+             Title="New Product">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <Label Text="Product Description: "/>
+        <Entry x:Name="txt_description"/>
+
+        <Label Text="Amount: "/>
+        <Entry x:Name="txt_amount" Keyboard="Numeric"/>
+
+        <Label Text="Unit Price: "/>
+        <Entry x:Name="txt_price" Keyboard="Numeric"/>
+    </VerticalStackLayout>
+</ContentPage>
