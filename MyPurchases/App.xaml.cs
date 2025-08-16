@@ -18,7 +18,7 @@ namespace MyPurchases
                         "database_sqlite_purchases.db3"
                         );
 
-                    _db = new SQLiteDatabaseHelper(".... db3");
+                    _db = new SQLiteDatabaseHelper(path);
                 }
 
                 return _db;
