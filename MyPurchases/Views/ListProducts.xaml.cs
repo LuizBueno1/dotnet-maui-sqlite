@@ -17,7 +17,9 @@ public partial class ListProducts : ContentPage
 	protected async override void OnAppearing()
 	{
 		try
-		{
+		{	
+			list.Clear();
+
 			List<Product> l = await App.Db.GetAll();
 
 			l.ForEach(i => list.Add(i));
