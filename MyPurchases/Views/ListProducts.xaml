@@ -13,9 +13,9 @@
         <SearchBar x:Name="txt_search"
                    Placeholder="Product Search"
                    TextChanged="txt_search_TextChanged"/>
-        <ListView x:Name="product_list">
+        <ListView x:Name="product_list" ItemSelected="product_list_ItemSelected">
             <ListView.Header>
-                <Grid ColumnDefinitions="*, *, *, *, *, *">
+                <Grid ColumnDefinitions="*, *, *, *, *">
                     <Label Grid.Column="0" Text="Id"/>
                     <Label Grid.Column="1" Text="Description"/>
                     <Label Grid.Column="2" Text="Price"/>
@@ -29,7 +29,7 @@
                         <ViewCell.ContextActions>
                             <MenuItem Text="Remove" Clicked="MenuItem_Clicked"/>
                         </ViewCell.ContextActions>
-                        <Grid ColumnDefinitions="*, *, *, *, *, *">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
                             <Label Grid.Column="0" Text="{Binding Id}"/>
                             <Label Grid.Column="1" Text="{Binding Description}"/>
                             <Label Grid.Column="2" Text="{Binding Price}"/>
