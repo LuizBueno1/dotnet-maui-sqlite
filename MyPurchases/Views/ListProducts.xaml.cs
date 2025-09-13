@@ -47,15 +47,22 @@ public partial class ListProducts : ContentPage
 		{
 			string query = e.NewTextValue;
 
-			list.Clear();
+            product_list.IsRefreshing = true;
+
+            list.Clear();
 
 			List<Product> l = await App.Db.Search(query);
 
 			l.ForEach(i => list.Add(i));
+
         } catch (Exception ex)
         {
             await DisplayAlert("Ops", ex.Message, "OK");
         }
+		finally
+		{
+			product_list.IsRefreshing = false;
+		}
     }
 
     private void ToolbarItem_Clicked_1(object sender, EventArgs e)
@@ -108,5 +115,25 @@ public partial class ListProducts : ContentPage
         {
             DisplayAlert("Ops", ex.Message, "OK");
         }
+    }
+
+    private async void product_list_Refreshing(object sender, EventArgs e)
+    {
+        try
+        {
+            list.Clear();
+
+            List<Product> l = await App.Db.GetAll();
+
+            l.ForEach(i => list.Add(i));
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Ops", ex.Message, "OK");
+        }
+		finally
+		{
+			product_list.IsRefreshing = false;
+		}
     }
 }
