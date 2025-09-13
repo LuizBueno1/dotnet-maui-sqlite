@@ -1,4 +1,5 @@
-﻿using MyPurchases.Helpers;
+﻿using System.Globalization;
+using MyPurchases.Helpers;
 
 namespace MyPurchases
 {
@@ -28,6 +29,8 @@ namespace MyPurchases
         public App()
         {
             InitializeComponent();
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
             MainPage = new NavigationPage(new Views.ListProducts());
         }
