@@ -30,7 +30,7 @@ namespace MyPurchases
         {
             InitializeComponent();
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
             MainPage = new NavigationPage(new Views.ListProducts());
         }
