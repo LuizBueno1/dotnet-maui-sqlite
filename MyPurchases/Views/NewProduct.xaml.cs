@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using MyPurchases.Models;
 
 namespace MyPurchases.Views;
@@ -17,6 +16,7 @@ public partial class NewProduct : ContentPage
 			Product product = new Product
 			{
 				Description = txt_description.Text,
+				Category = txt_category.Text,
 				Amount = Convert.ToDouble(txt_amount.Text),
 				Price = Convert.ToDouble(txt_price.Text)
 			};

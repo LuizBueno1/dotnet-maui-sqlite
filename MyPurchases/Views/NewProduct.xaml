@@ -12,6 +12,9 @@
         <Label Text="Product Description: "/>
         <Entry x:Name="txt_description"/>
 
+        <Label Text="Product Category: "/>
+        <Entry x:Name="txt_category"/>
+
         <Label Text="Amount: "/>
         <Entry x:Name="txt_amount" Keyboard="Numeric"/>
 

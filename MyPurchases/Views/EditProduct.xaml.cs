@@ -19,6 +19,7 @@ public partial class EditProduct : ContentPage
             {   
                 Id = product_attached.Id,
                 Description = txt_description.Text,
+                Category = txt_category.Text,
                 Amount = Convert.ToDouble(txt_amount.Text),
                 Price = Convert.ToDouble(txt_price.Text)
             };
