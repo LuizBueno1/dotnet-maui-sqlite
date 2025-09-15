@@ -19,10 +19,10 @@ namespace MyPurchases.Helpers
 
         public Task<List<Product>> Update(Product product) 
         {
-            string sql = "UPDATE Product SET Description=?, Amount=?, Price=? WHERE Id=?";
+            string sql = "UPDATE Product SET Description=?, Category=?, Amount=?, Price=? WHERE Id=?";
 
             return _connection.QueryAsync<Product>(sql,
-                product.Description, product.Amount, product.Price, product.Id);
+                product.Description, product.Category, product.Amount, product.Price, product.Id);
         }
 
         public Task<int> Delete(int id) 
@@ -37,6 +37,13 @@ namespace MyPurchases.Helpers
 
         public Task<List<Product>> Search(String query) {
             string sql = "SELECT * FROM Product WHERE Description LIKE '%" + query + "%'";
+
+            return _connection.QueryAsync<Product>(sql);
+        }
+
+        public Task<List<Product>> SearchByCategory(String query)
+        {
+            string sql = "SELECT * FROM Product WHERE Category LIKE '%" + query + "%'";
 
             return _connection.QueryAsync<Product>(sql);
         }
