@@ -5,6 +5,7 @@ namespace MyPurchases.Models
     public class Product
     {
         string _description;
+        string _category;
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -19,6 +20,19 @@ namespace MyPurchases.Models
                 }
 
                 _description = value;
+            }
+        }
+        public string Category
+        {
+            get => _category;
+            set
+            {
+                if (value == null)
+                {
+                    throw new Exception("Please, fill in the category.");
+                }
+
+                _category = value;
             }
         }
         public double Amount { get; set; }
